@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>   
+<head>
+  <meta charset="UTF-8" />
+  <title>Login / Cadastro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'css/stylu.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+
+    <div class="content">
+      <!--FORMULÁRIO DE LOGIN-->
+      <div id="login">
+        <form method="POST" action="submit"> {% csrf_token %}
+          <h1>Login</h1>
+          <p>
+            <label for="username">Usuário</label>
+            <input id="username" name="username" class="form-control" required="required" type="text" placeholder="ex. Varjus 4.0"/>
+          </p>
+
+          <p>
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control" required="required" type="password" placeholder="ex. senha" />
+          </p>
+
+          <p>
+            <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+            <label for="manterlogado">Manter-me logado</label>
+          </p>
+
+          <p>
+            {% for message in messages %}
+              <div class="alert alert-danger">
+                <strong>Usuario não cadastrado!</strong> {{message}}
+              </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Entrar</button>
+          </p>
+
+          <p class="link">
+            Ainda não tem conta?
+            <a href="#paracadastro">Cadastre-se</a>
+          </p>
+        </form>
+      </div>
+
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div id="cadastro">
+        <form method="POST" action=""> {% csrf_token %}
+          <h1>Cadastro</h1>
+
+          <p>
+            <label for="user_cad">Usuário</label>
+            <input id="user_cad" name="user_cad" required="required" type="text" placeholder="nome" />
+          </p>
+
+          <p>
+            <label for="senha_cad">Senha</label>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+
+          <p>
+            <label for="confsenha_cad">Confirme sua senha</label>
+            <input id="confsenha_cad" name="confsenha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+
+          <p>
+            <input type="submit" value="Cadastrar"/>
+          </p>
+
+          <p class="link">
+            Já tem conta?
+            <a href="#paralogin"> Ir para Login </a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

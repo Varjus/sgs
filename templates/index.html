@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SGS</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo">
+        <div class="headert_text_resize"> <img src="{% static 'img/logosimec.jpg' %}" alt="" width="200" height="100" /> </div>
+        <h1 class="logo_title"><a href="index.html"><span>SGS</span> - Sistema de Gestão SIMEC<br />
+          <small>GARANTINDO RESULTADOS ESTAVEIS E PADRONIZADO</small></a></h1>
+      </div>
+      <div class="clr"></div>
+      <div class="menu">
+        <ul>
+          <li><a href="http://gruposimec.com.br/simec/" class="active"><span>NOSSA EMPRESA</span></a></li>
+          <li><a href="#"><span>SERVIÇOS</span></a></li>
+          <li><a href="#"><span>NATUREZA</span></a></li>
+          <li><a href="{% url 'paginas:home' %}" class="active"><span>CADASTRO</span></a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <form id="form1" name="form1" method="post" action="">
+          <label><span>
+            <input name="q" type="text" class="keywords" id="textfield" maxlength="50" value="Pesquisa..." />
+             <a href="/logout/">Sair</a>
+          </span>
+            <input name="b" type="image" src="{% static 'img/search.gif' %}" class="button" />
+          </label>
+        </form>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="headert_text_resize"> <img src="{% static 'img/Como ganhar dinheiro em 2022.gif' %}" alt="" width="970" height="338" /> </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body">
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">SGS &copy; <a href="#">GARANTINDO O CUMPRIMENTO DA SUA ROTINA</a></p>
+      <p class="rf">DESENVOLVIDO POR <a target="_blank" href="CLAYTON SANTOS VARJUS">CLAYTON SANTOS VARJUS</a></p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
